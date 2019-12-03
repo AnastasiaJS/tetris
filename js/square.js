@@ -9,7 +9,7 @@ let Square = function(){
     // 原点
     this.origin={
         x:0,
-        y:0
+        y:20
     }
     this.dir=0
 }

@@ -216,6 +216,20 @@ let Game=function(){
         refreshDiv(next.data,nextDivs)
         
     }
+
+    let addTailLines=function(lines){
+        for(let i=0;i<gameData.length-lines.length;i++){
+            gameData[i]=gameData[i+lines.length];
+        }
+        for(let i=0;i<lines.length;i++){
+            gameData[gameData.length-lines.length+i]=lines[i];
+        }
+        cur.origin.x=cur.origin.x-lines.length;
+        if(cur.origin.x<0){
+            cur.origin.x=0
+        }
+        refreshDiv(gameData,gameDivs)
+    }
     let init = function(doms,type,dir){
         gameDiv=doms.gameDiv;
         nextDiv=doms.nextDiv;
@@ -240,4 +254,5 @@ let Game=function(){
     this.checkGameOver=checkGameOver;
     this.setTime=setTime;
     this.setScore=setScore;
+    this.addTailLines=addTailLines;
 }

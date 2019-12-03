@@ -247,7 +247,7 @@ SquareFactory.prototype.make = function (index, dir) {
             break;
     }
     s.origin.x=0;
-    s.origin.y=0;
+    s.origin.y=3;
     s.rotate(dir)
     return s
 }
